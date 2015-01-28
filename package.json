@@ -1,0 +1,24 @@
+{
+    "name": "Blog",
+    "version": "1.0.0",
+    "homepage": "http://www.openshift.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/openshift/origin-server"
+    },
+    "private": true,
+    "engines": {
+        "node": ">= 0.6.0",
+        "npm": ">= 1.0.0"
+    },
+    "dependencies": {
+        "express": "~3.4.4",
+        "jade": "*",
+        "vow": "*"
+    },
+    "scripts": {
+        "deps": "npm i && bower i",
+        "build": "HOME=$HOME/app-root/runtime bower install --config.interactive=false",
+        "start": "node core/app.js"
+    }
+}

@@ -1,0 +1,56 @@
+*{margin: 0;padding: 0;}
+
+.blog
+{
+    padding: 20px;
+
+    font-family: Helvetica, sans-serif;
+}
+
+.blog a
+{
+    opacity: .9;
+    color: #3c98c8;
+    text-decoration: none;
+}
+.blog a:hover
+{
+    opacity: 1;
+}
+.blog a:visited
+{
+    color: #2e749b;
+}
+
+.menu a
+{
+    line-height: 2em;
+
+    display: inline-block;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 100px;
+    padding: 0 10px;
+
+    text-shadow: 0 0 2px #fff;
+}
+
+.menu a:hover
+{
+    position: relative;
+
+    background: #4abbfd;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.1);
+}
+
+.menu a:hover:before
+{
+    position: absolute;
+    left: -10px;
+
+    width: 120px;
+    height: 100%;
+
+    box-shadow: inset 0 0 8px -3px #000;
+}

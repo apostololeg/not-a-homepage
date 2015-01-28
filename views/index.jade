@@ -1,0 +1,21 @@
+mixin css(src)
+    link(rel="stylesheet", href=src)
+
+mixin js(src)
+    script(src=src)
+
+doctype html5
+html
+    head
+        title #{title}
+        meta(name="viewport", content="width=device-width,maximum-scale=1,initial-scale=1,user-scalable=0")
+        link(rel="shortcut icon", href="/favicon.png")
+
+        +css("/index.css")
+        +js("/lib/jquery.js")
+        +js("/index.js")
+
+    body.blog
+        .menu
+            for name in stuff
+                a(href='/stuff/' + name)= name

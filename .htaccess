@@ -1,0 +1,5 @@
+Disallow: /
+Allow: index.html
+Allow: /blank
+Allow: /menu
+Allow: /stuff
