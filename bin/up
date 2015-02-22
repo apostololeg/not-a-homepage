@@ -1,0 +1,59 @@
+// обновление содержимого папки stuff
+var fs = require('fs'),
+    Vow = require('vow'),
+    git = require('gift'),
+    stuff = require('../stuff.json'),
+    root = 'https://github.com/truerenton/';
+
+function load(items) {
+    // var
+        // promise = new Vow.Promise(),
+        // failed = [],
+        // success = [],
+        // already = [];
+
+    if(fs.existsSync('./stuff')) {
+        console.log('loading your works...');
+        var requests = items.map(function(repo) {
+            var path = './stuff/' + repo;
+                // promise = new Vow.Promise();
+
+            if(!fs.existsSync(path)) {
+                git.clone(root + repo + '.git', path, function(err) {
+                    if(err) {
+                        console.log('\t['+repo+'] – ERROR.', err);
+                        // failed.push(repo);
+                        // promise.fulfill({ error: err });
+                    } else {
+                        console.log('\t['+repo+'] – sussecful!');
+                        // success.push(repo);
+                        // promise.fulfill();
+                    }
+                });
+            } else {
+                // already.push(repo);
+                // return Vow.resolve();
+            }
+
+            // return promise;
+        });
+
+        // Vow.all(requests)
+        //     .then(function(res) {
+        //         console.log('Downloaded', success.length);
+        //         console.log('Failed', failed.length);
+        //         console.log('Not modified', already.length);
+        //     });
+    } else {
+        console.log('has no "./stuff/"');
+        fs.mkdir('./stuff', function(err) {
+            if(err) throw err;
+            load.bind(items);
+        });
+    }
+
+    // return promise;
+}
+
+
+load(stuff.items);

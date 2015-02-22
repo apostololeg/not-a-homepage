@@ -1,11 +1,11 @@
-var stuff = require('../bower.json').dependencies;
+var stuff = require('../stuff.json');
 
 function index(req, res){
 
     res.render('index', {
-        title: 'test',
+        title: '😌',
         content: 'Welcome!',
-        stuff: Object.keys(stuff)
+        stuff: stuff.items
     });
 
 };

@@ -1,17 +1,18 @@
 {
-    "name": "blog",
-    "version": "0.0.1",
-    "authors": [
-        "Oleg Apostol <truerenton@gmail.com>"
-    ],
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "stuff"
-    ],
-    "dependencies": {
-        "conus": "https://github.com/truerenton/conus.git",
-        "csss_hmk": "https://github.com/truerenton/csss_hmk.git"
-    }
+  "name": "blog",
+  "version": "0.0.1",
+  "authors": [
+    "Oleg Apostol <truerenton@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "stuff"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "kkontroller": "https://github.com/truerenton/kkontroller.git",
+    "modernizr": "https://github.com/truerenton/modernizr_custom.git"
+  }
 }

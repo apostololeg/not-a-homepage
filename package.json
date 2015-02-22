@@ -14,11 +14,14 @@
     "dependencies": {
         "express": "~3.4.4",
         "jade": "*",
-        "vow": "*"
+        "vow": "*",
+        "jsonfile": "*",
+        "gift": "*"
     },
     "scripts": {
         "deps": "npm i && bower i",
         "build": "HOME=$HOME/app-root/runtime bower install --config.interactive=false",
-        "start": "node core/app.js"
+        "start": "node core/app.js",
+        "up": "node ./bin/up"
     }
 }
