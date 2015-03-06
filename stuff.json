@@ -1,7 +1,34 @@
 {
-    "items": [
-        "conus",
-        "csss_hmk",
-        "anicube"
+    "clusters": [
+        {
+            "slug": "CSSScene",
+            "description": "сценки кистью web-технологий.",
+            "items": [
+                { "slug": "conus" },
+                { "slug": "csss_hmk" },
+                { "slug": "anicube" },
+                { "slug": "synthray" }
+            ]
+        },
+        {
+            "slug": "CSSExperiments",
+            "description": "грязная песочница",
+            "items": [
+                {
+                    "slug": "pie-charts",
+                    "description": "демка круговой диаграммы на Raphael.js"
+                }
+            ]
+        },
+        {
+            "slug": "WEB-punk",
+            "description": "здесь плавится WEB",
+            "items": [
+                {
+                    "slug": "melt",
+                    "description": "что такое \"немножно поплавить веб\""
+                }
+            ]
+        }
     ]
 }

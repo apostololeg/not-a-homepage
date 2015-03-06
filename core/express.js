@@ -1,18 +1,17 @@
 var http = require('http'),
     express = require('express'),
     app = express(),
-    routes = require('./routes.js'),
     path = require('path'),
-    cfg = require('../.config.json');
+    cfg = require('../.config.json'),
+    mj = require('../static/lib/microjungle/dist/dom.min.js'),
+    template = require('../tmpl/index.js');
 
 function configure() {
-
     app
         .configure(function(){
             app
                 .set('port', cfg.port)
                 .set('views', __dirname + '/../views')
-                .set('view engine', 'jade')
                 .use(app.router)
                 .use(express.static(path.join(__dirname, '/../static')))
                 .use('/stuff', express.static(path.join(__dirname, '/../stuff')));
@@ -24,19 +23,24 @@ function configure() {
         });
 
     // роутинг
-    app.get('/', routes.index);
-    app.get('/static', function() {
-        console.log('/static', arguments);
+    app.get('/$', function(req, res, next) {
+        res.send(template({ title: 'индекс' }));
     });
-
+    // app.get('/:cluster/:feed', function(req, res, next) {
+    //     if(!req.params.cluster && req.params.feed) {
+    //         next();
+    //         res.send(200);
+    //     } else {
+    //         // console.log('req.params', req.params);
+    //         res.send(template({ title: 'индекс 2' }));
+    //     }
+    // });
 }
 
 function startServer() {
-
-    http.createServer(app).listen(cfg.port, cfg.ip, function(){
+    http.createServer(app).listen(cfg.port, cfg.ip, function() {
         console.log('App started at', cfg.port);
     });
-
 }
 
 

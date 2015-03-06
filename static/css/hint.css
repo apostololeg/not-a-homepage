@@ -1,0 +1,67 @@
+.hint
+{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+
+    pointer-events: none;
+}
+.hint .keys
+{
+    width: 135px;
+    height: 70px;
+}
+.hint .key
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 40px;
+    height: 30px;
+    margin: 0 5px 5px 0;
+
+    color: #8a8a8a;
+    border-radius: 10px 0 10px 0;
+    box-shadow: inset 0 0 10px 2px rgba(0,0,0,.05);
+}
+
+.hint .key_up
+{
+    margin: 0 46px 5px;
+}
+.hint .key_right
+{
+    top: -1px;
+}
+.hint .key:after
+{
+    position: absolute;
+    top: 6px;
+    left: 15px;
+
+    width: 0;
+    height: 0;
+}
+.hint .key_up:after
+{
+    content: '↑';
+}
+.hint .key_down:after
+{
+    content: '↓';
+}
+.hint .key_left:after
+{
+    content: '←';
+}
+.hint .key_right:after
+{
+    content: '→';
+}
+
+.hint .key_left:after,
+.hint .key_right:after
+{
+    margin-left: -3px;
+}

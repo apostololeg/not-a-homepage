@@ -1,0 +1,105 @@
+@font-face
+{
+    font-family: edunline;
+    src: url(../fonts/edunline.ttf);
+}
+
+.page.mode_CSSScene
+{
+    background: rgb(140, 252, 255);
+}
+.page.mode_CSSExperiments
+{
+    background: rgb(255, 213, 140);
+}
+.page.mode_WEB-punk
+{
+    background: rgb(159, 140, 255);
+}
+
+.cluster
+{
+    display: inline-block;
+}
+
+.cluster.control_active:before
+{
+    position: absolute;
+    top: 34px;
+    left: 0;
+
+    content: '';
+}
+
+.cluster .title
+{
+    font-family: edunline;
+    font-size: 20px;
+
+    display: inline-block;
+
+    padding: 20px;
+}
+.cluster:not(.control_active) .title
+{
+    color: rgba(0,0,0,.4);
+}
+
+.cluster > .description
+{
+    position: absolute;
+    left: 0;
+
+    padding-left: 20px;
+    font-style: italic;
+
+    pointer-events: none;
+
+    opacity: 0;
+    color: rgba(0,0,0,.4);
+}
+.cluster_active > .description
+{
+    pointer-events: auto;
+    /*display: block;*/
+
+    opacity: 1;
+}
+
+.cluster .inner
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow-y: scroll;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    -webkit-transition: transform .1s ease-out;
+            transition: transform .1s ease-out;
+    -webkit-transform-origin: 50% 0;
+    pointer-events: none;
+
+    opacity: 0;
+    background: -webkit-linear-gradient(top,
+        rgba(255,255,255,.7) 0,
+        rgba(255,255,255,.9) 20px,
+        #fff 50px);
+    box-shadow: 0 -4px 0 rgba(0,0,0,.1);
+
+    -webkit-backface-visibility: hidden;
+}
+.page.state_cluster .control .inner
+{
+    -webkit-transform: translateY(90px);
+}
+.cluster_active .inner
+{
+    pointer-events: auto;
+
+    opacity: 1;
+}

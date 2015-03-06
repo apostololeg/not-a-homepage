@@ -12,7 +12,9 @@
   ],
   "dependencies": {
     "jquery": "~2.1.3",
+    "requirejs": "https://github.com/jrburke/requirejs.git",
     "kkontroller": "https://github.com/truerenton/kkontroller.git",
-    "modernizr": "https://github.com/truerenton/modernizr_custom.git"
+    "modernizr": "https://github.com/truerenton/modernizr_custom.git",
+    "microjungle": "https://github.com/deepsweet/microjungle.git"
   }
 }
